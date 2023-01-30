@@ -28,6 +28,7 @@ export default function BlogMeta() {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
+      <script data-no-cookie async src="https://cdn.splitbee.io/sb.js"></script>
     </>
   )
 }

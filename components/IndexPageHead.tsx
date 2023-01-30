@@ -20,6 +20,7 @@ export default function IndexPageHead({ settings }: IndexPageHeadProps) {
       <title>{title}</title>
       <BlogMeta />
       <MetaDescription value={description} />
+      <script data-no-cookie async src="https://cdn.splitbee.io/sb.js"></script>
       <meta
         property="og:image"
         // Because OG images must have a absolute URL, we use the
