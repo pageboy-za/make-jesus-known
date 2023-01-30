@@ -5,7 +5,6 @@ import { Post, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
 import { lazy } from 'react'
 
-
 const PreviewIndexPage = lazy(() => import('components/PreviewIndexPage'))
 
 interface PageProps {

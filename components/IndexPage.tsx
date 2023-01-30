@@ -7,6 +7,8 @@ import MoreStories from 'components/MoreStories'
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
+import Footer from './footer'
+import MenuBar from './structural/menuBar'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -26,6 +28,10 @@ export default function IndexPage(props: IndexPageProps) {
         <IndexPageHead settings={settings} />
       </Head>
       <Layout preview={preview} loading={loading}>
+        <div className=''>
+        <MenuBar />
+        </div>
+
         <Container>
           <BlogHeader title={title} description={description} level={1} />
           {heroPost && (
@@ -39,7 +45,9 @@ export default function IndexPage(props: IndexPageProps) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <Footer />
         </Container>
+
       </Layout>
     </>
   )

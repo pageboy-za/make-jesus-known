@@ -45,11 +45,11 @@ export default defineType({
       type: 'array',
       of: [{ type: 'block' }],
     }),
-    defineField({
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'text',
-    }),
+      defineField({
+        name: 'excerpt',
+        title: 'Excerpt',
+        type: 'text',
+      }),
     defineField({
       name: 'coverImage',
       title: 'Cover Image',
@@ -69,6 +69,11 @@ export default defineType({
       title: 'Author',
       type: 'reference',
       to: [{ type: authorType.name }],
+    }),
+    defineField({
+      name: 'sermonVideo',
+      title: 'Sermon Video',
+      type: 'text',
     }),
   ],
   preview: {

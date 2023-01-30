@@ -11,6 +11,8 @@ import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 import { notFound } from 'next/navigation'
+import VideoComponent from './videoComponent'
+import ReactPlayer from 'react-player'
 
 export interface PostPageProps {
   preview?: boolean
@@ -52,7 +54,15 @@ export default function PostPage(props: PostPageProps) {
                   date={post.date}
                   author={post.author}
                 />
+
+                {
+                  post.sermonVideo ?
+                  <VideoComponent vidSrc={post.sermonVideo} />
+                  : 
+                  <></>
+                }
                 <PostBody content={post.content} />
+
               </article>
               <SectionSeparator />
               {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
