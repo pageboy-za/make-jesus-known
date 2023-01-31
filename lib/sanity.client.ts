@@ -2,11 +2,13 @@ import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api'
 import {
   type Post,
   type Settings,
+  type About,
   indexQuery,
   postAndMoreStoriesQuery,
   postBySlugQuery,
   postSlugsQuery,
   settingsQuery,
+  aboutQuery,
 } from 'lib/sanity.queries'
 import { createClient } from 'next-sanity'
 
@@ -27,6 +29,13 @@ export async function getSettings(): Promise<Settings> {
 export async function getAllPosts(): Promise<Post[]> {
   if (client) {
     return (await client.fetch(indexQuery)) || []
+  }
+  return []
+}
+
+export async function getAbout(): Promise<About[]> {
+  if (client) {
+    return (await client.fetch(aboutQuery)) || []
   }
   return []
 }
@@ -62,3 +71,4 @@ export async function getPostAndMoreStories(
   }
   return { post: null, morePosts: [] }
 }
+

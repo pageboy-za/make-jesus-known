@@ -1,11 +1,11 @@
-import { BookIcon } from '@sanity/icons'
+import {InfoOutlineIcon} from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
-import authorType from './author'
+
 
 /**
- * This file is the schema definition for a post.
+ * This file is the schema definition for the about section.
  *
  * Here you'll be able to edit the different fields that appear when you 
  * create or edit a post in the studio.
@@ -17,9 +17,9 @@ import authorType from './author'
  */
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
-  icon: BookIcon,
+  name: 'about',
+  title: 'About',
+  icon: InfoOutlineIcon,
   type: 'document',
   fields: [
     defineField({
@@ -58,35 +58,15 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
-      name: 'date',
-      title: 'Date',
-      type: 'datetime',
-      initialValue: () => new Date().toISOString(),
-    }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: [{ type: authorType.name }],
-    }),
-    defineField({
-      name: 'sermonVideo',
-      title: 'Sermon Video',
-      type: 'string',
-    }),
+
   ],
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
-      date: 'date',
       media: 'coverImage',
     },
-    prepare({ title, media, author, date }) {
+    prepare({ title, media,}) {
       const subtitles = [
-        author && `by ${author}`,
-        date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
       ].filter(Boolean)
 
       return { title, media, subtitle: subtitles.join(' ') }

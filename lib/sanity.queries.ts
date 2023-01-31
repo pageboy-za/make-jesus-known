@@ -10,6 +10,15 @@ const postFields = groq`
   "author": author->{name, picture},
   sermonVideo,
 `
+const aboutFields = groq`
+  _id,
+  title,
+  date,
+  excerpt,
+  coverImage,
+  "slug": slug.current,
+  "author": author->{name, picture},
+`
 
 export const settingsQuery = groq`*[_type == "settings"][0]`
 
@@ -39,6 +48,11 @@ export const postBySlugQuery = groq`
   ${postFields}
 }
 `
+export const aboutQuery = groq`
+*[_type == "post"] | order(date desc, _updatedAt desc) {
+  ${aboutFields}
+}
+`
 
 export interface Author {
   name?: string
@@ -57,6 +71,16 @@ export interface Post {
   sermonVideo?:string
 }
 
+export interface About {
+  _id: string
+  title?: string
+  coverImage?: any
+  date?: string
+  excerpt?: string
+  author?: Author
+  slug?: string
+  content?: any
+}
 export interface Settings {
   title?: string
   description?: any[]
