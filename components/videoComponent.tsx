@@ -2,15 +2,38 @@
 import ReactPlayer from 'react-player/lazy'
 
 export default function VideoComponent(
-  props: {vidSrc : string}
+  props: {
+    vidSrc : string
+  }
 ) {
   const { vidSrc } = props
   return (
     <>
-    <div className='grid content-center place-content-center'>
-    <h2 className='text-black text-xl bold decoration-fuchsia-900 underline py-4 px-2 '>Sermon Video</h2>
-    <ReactPlayer  className='rounded-lg' url={vidSrc} />
-    </div>
+    <style jsx global>{`
+        .player-wrapper {
+          position: relative;
+          padding-top: 25;
+          padding-bottom: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+        }
+        
+        .react-player {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      `}</style>
+      <div className='relative pb-[56.25%]'>
+        <ReactPlayer
+          url={vidSrc}
+          width='100%'
+          height='100%'
+          playing={true}
+          controls={true}
+          muted={true}
+          className='absolute top-0 left-0'
+        />
+      </div>
     </>
   )
 }
+

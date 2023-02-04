@@ -13,11 +13,8 @@ const postFields = groq`
 const aboutFields = groq`
   _id,
   title,
-  date,
-  excerpt,
   coverImage,
   "slug": slug.current,
-  "author": author->{name, picture},
 `
 
 export const settingsQuery = groq`*[_type == "settings"][0]`
@@ -75,9 +72,7 @@ export interface About {
   _id: string
   title?: string
   coverImage?: any
-  date?: string
   excerpt?: string
-  author?: Author
   slug?: string
   content?: any
 }

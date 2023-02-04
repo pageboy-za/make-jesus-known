@@ -1,5 +1,5 @@
 import { PreviewSuspense } from '@sanity/preview-kit'
-import IndexPage from 'components/IndexPage'
+import BlogPage from 'components/BlogPage'
 import { getAllPosts, getSettings } from 'lib/sanity.client'
 import { Post, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
@@ -29,7 +29,7 @@ export default function Page(props: PageProps) {
     return (
       <PreviewSuspense
         fallback={
-          <IndexPage loading preview posts={posts} settings={settings} />
+          <BLogPage loading preview posts={posts} settings={settings} />
         }
       >
         <PreviewIndexPage token={token} />
@@ -37,7 +37,7 @@ export default function Page(props: PageProps) {
     )
   }
 
-  return <IndexPage posts={posts} settings={settings} />
+  return <BlogPage posts={posts} settings={settings} />
 }
 
 export const getStaticProps: GetStaticProps<

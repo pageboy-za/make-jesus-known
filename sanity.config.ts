@@ -10,10 +10,11 @@ import { settingsPlugin, settingsStructure } from 'plugins/settings'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+import aboutType from 'schemas/about'
 import authorType from 'schemas/author'
 import postType from 'schemas/post'
 import settingsType from 'schemas/settings'
-import AbooutType from 'schemas/about'
+import youtubeType from 'schemas/youtube'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Make Jesus Known'
@@ -25,7 +26,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [authorType, postType,AbooutType, settingsType],
+    types: [authorType, postType,aboutType, youtubeType, settingsType],
   },
   plugins: [
     deskTool({

@@ -9,9 +9,9 @@ export default defineType({
   title: 'Settings',
   type: 'document',
   icon: CogIcon,
-  preview: { select: { title: 'title', subtitle: 'description' } },
+  preview: { select: { title: 'title', subtitle: 'description', videoPoster: 'videoposter', videoURL : 'videourl' } },
   // Uncomment below to have edits publish automatically as you type
-  // liveEdit: true,
+ liveEdit: true,
   fields: [
     defineField({
       name: 'title',
@@ -54,6 +54,20 @@ export default defineType({
         }),
       ],
       validation: (rule) => rule.max(155).required(),
+    }),
+    defineField({
+      name: 'videoPoster',
+      description: 'This is the posterImage used in the video Jumbo.',
+      title: 'Video Poster',
+      type: 'image',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'videoUrl',
+      description: 'This is the Video that will be played when the play button is clicked on the Jumbo.',
+      title: 'Video URL',
+      type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'ogImage',

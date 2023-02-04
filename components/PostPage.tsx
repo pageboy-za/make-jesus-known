@@ -11,8 +11,9 @@ import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 import { notFound } from 'next/navigation'
-import VideoComponent from './videoComponent'
 import ReactPlayer from 'react-player'
+
+import VideoComponent from './videoComponent'
 
 export interface PostPageProps {
   preview?: boolean

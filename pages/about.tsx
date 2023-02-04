@@ -8,7 +8,7 @@ import { lazy } from 'react'
 const PreviewIndexPage = lazy(() => import('components/PreviewIndexPage'))
 
 interface PageProps {
-  getAbout: About[]
+  getAbout: About
   settings: Settings
   preview: boolean
   token: string | null
@@ -37,7 +37,7 @@ export default function Page(props: PageProps) {
     )
   }
 
-  return <IndexPage posts={getAbout} settings={settings} />
+  return <IndexPage About={getAbout} settings={settings} />
 }
 
 export const getStaticProps: GetStaticProps<
