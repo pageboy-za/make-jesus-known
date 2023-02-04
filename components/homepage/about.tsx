@@ -35,7 +35,7 @@ export default function About() {
                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
                   <Image
                     className="rounded-lg object-cover object-center shadow-lg"
-                    src="/poster.jpg"
+                    src="/cambridgeArial.jpg"
                     alt=""
                     width={1184}
                     height={1376}
