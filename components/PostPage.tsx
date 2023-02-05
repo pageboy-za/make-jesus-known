@@ -58,7 +58,7 @@ export default function PostPage(props: PostPageProps) {
 
                 {
                   post.sermonVideo ?
-                  <VideoComponent vidSrc={post.sermonVideo} />
+                  <VideoComponent vidSrc={post.sermonVideo} muted={false} autoPlay={false} controls={false} />
                   : 
                   <></>
                 }

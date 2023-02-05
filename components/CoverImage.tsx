@@ -6,7 +6,7 @@ import Link from 'next/link'
 interface CoverImageProps {
   title: string
   slug?: string
-  image: any
+  image?: any
   priority?: boolean
 }
 
@@ -19,7 +19,7 @@ export default function CoverImage(props: CoverImageProps) {
       })}
     >
       <Image
-        className="h-auto w-full"
+        className="h-auto w-full grayscale"
         width={2000}
         height={1000}
         alt={`Cover Image for ${title}`}

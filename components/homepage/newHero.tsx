@@ -4,9 +4,8 @@ import { Bars3Icon,XMarkIcon} from '@heroicons/react/24/outline'
 import VideoComponent from 'components/videoComponent'
 import Link from 'next/link'
 import React from 'react'
-import { useState } from 'react'
+import {useState } from 'react'
 
-import Video from './Video'
 
 const navigation = [
     { name: 'About', href: '#about' },
@@ -88,7 +87,7 @@ export default function newHero() {
           </div>
         </div>
         <div>
-          <VideoComponent vidSrc="https://www.youtube.com/watch?v=BRNMHRtyo84" />
+        <VideoComponent vidSrc="https://www.youtube.com/watch?v=BRNMHRtyo84" muted={true} autoPlay={true} controls={true} />
         </div>
       </div>
   )

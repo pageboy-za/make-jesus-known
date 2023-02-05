@@ -67,7 +67,7 @@ const navigation = [
               </a>
             ))}
           </div>
-          <div className="mt-8 md:order-1 md:mt-0 flex flex-col">
+          <div className="mt-8 md:order-1 md:mt-0 flex flex-col align-middle items-center">
             <h1 className='text-2xl font-serif bville uppercase font-semi-bold text-white'>Make Jesus Known</h1>
             <p className='text-white text-xs'>A project from Calvary Chapel Cambridge</p>
             </div>

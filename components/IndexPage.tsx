@@ -9,7 +9,7 @@ import Head from 'next/head'
 import Footer from './global/footer'
 import SectionHeader from './global/sectionHeader'
 import About from './homepage/about'
-import NewHero from './homepage/newHero'
+import NewHero from './homepage/Hero'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -29,15 +29,12 @@ export default function IndexPage(props: IndexPageProps) {
       </Head>
       <Layout preview={preview} loading={loading}>
         <div className=''>
-        
         </div>
-
         <Container>
           <NewHero />
           <SectionHeader>Find out more about us</SectionHeader>
           <About />
           <SectionHeader>Check out our blog</SectionHeader>
-          {/* <Hero><HeroContent /></Hero> */}
 
           {heroPost && (
             <HeroPost
