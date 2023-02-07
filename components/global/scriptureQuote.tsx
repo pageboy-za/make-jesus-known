@@ -1,15 +1,17 @@
 export default function ScriptureQuote({children, reference, version}) { 
     return (
-      <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white ">
-        <div className="pl-10 pr-4 ml-10 py-5 sm:p-6">{children}</div>
-        <div className="px-4 py-2 sm:px-6 font-semibold grid grid-cols-3">
-          <div className="text-right col-span-2">
-          {reference}
-          </div>
-          <div className="text-right col-span-1">
-          {version}
-          </div>
+      <blockquote className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white ">
+        <div className="pl-1 pr-4 ml-1 py-5 sm:p-6 border-l-4 border-gray-500 pb-4">
+          {children}
         </div>
-      </div>
+        <div className="mt-2 px-4 py-2 sm:px-6 font-semibold flex text-right">
+          <span className="px-4 text-right">
+          {reference}
+          </span>
+          <span className="px-4 text-right">
+          {version}
+          </span>
+        </div>
+      </blockquote>
     )
   }

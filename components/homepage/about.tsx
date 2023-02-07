@@ -21,7 +21,6 @@ export default function About() {
   return (
     <div className="overflow-hidden bg-white" id="about">
       <div className="relative mx-auto max-w-7xl py-16 px-6 lg:px-8">
-        <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen bg-gray-50 lg:block" />
         <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
           <div>
             <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl bville">About Calvary Chapel Cambridge</h3>
@@ -29,7 +28,6 @@ export default function About() {
         </div>
         <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="relative lg:col-start-2 lg:row-start-1">
-        
             <div className="relative mx-auto max-w-prose text-base lg:max-w-none">
               <figure>
                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
