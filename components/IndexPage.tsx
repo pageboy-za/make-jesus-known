@@ -9,6 +9,7 @@ import Head from 'next/head'
 import Footer from './global/footer'
 import SectionHeader from './global/sectionHeader'
 import About from './homepage/about'
+import Contact from './homepage/contact'
 import NewHero from './homepage/Hero'
 
 export interface IndexPageProps {
@@ -34,6 +35,8 @@ export default function IndexPage(props: IndexPageProps) {
           <NewHero />
           <SectionHeader>Find out more about us</SectionHeader>
           <About />
+          <SectionHeader>Keep in Contact with Us</SectionHeader>
+          <Contact />
           <SectionHeader>Check out our blog</SectionHeader>
 
           {heroPost && (

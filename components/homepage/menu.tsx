@@ -5,14 +5,10 @@ import Link from 'next/link'
 import React from 'react'
 import {useState } from 'react'
 
-const navigation = [
-    { name: 'About', href: '#about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '#footer' },
-  ]
+export default function Menu({nav}) {
 
-export default function newHero() {
-  const [mobileMenuOpen, setMobileMenuOpen ] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const navigation = nav
 
   return (
 <div className="bg-gray-900 px-6 lg:px-8">

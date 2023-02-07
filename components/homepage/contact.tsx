@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import Link from 'next/link'
+
 
 const navigation = [
     {
@@ -41,20 +40,7 @@ const navigation = [
         </svg>
       ),
     },
-    {
-        name: 'Web',
-        href: 'https://www.calvarycambridge.co.uk/',
-        icon: (props) => (
-          <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-            <path 
-            fillRule="evenodd"
-            d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z" 
-            clipRule="evenodd"
-            />
-          </svg>
-        ),
-      },
-      {
+     {
         name: 'Telgram',
         href: 'https://t.me/MAKEJESUSKNOWN',
         icon: (props) => (
@@ -66,33 +52,47 @@ const navigation = [
         ),
       }, 
   ]
-  
-  export default function Footer() {
+
+export default function Contact() {
     return (
-      <footer className="bg-gray-900" id="footer">
-        <div className="mx-auto max-w-7xl py-12 px-6 md:flex md:items-center md:justify-between lg:px-8">
-          <div className="flex justify-center space-x-6 md:order-2">
-            {navigation.map((item) => (
-              <a key={item.name} href={item.href} target="_blank" rel="noreferrer" className="text-gray-100 hover:text-gray-100">
-                <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-          <div className="mt-8 md:order-1 md:mt-0 flex flex-col align-middle items-center">
-            <h1 className='text-2xl font-serif bville uppercase font-semi-bold text-white'>Make Jesus Known</h1>
-            <p className='text-white text-xs'>A project from Calvary Chapel Cambridge</p>
-            </div>
-            <div className='flex flex-col items-center justify-center'>
-              <a href="http://www.calvarycambridge.co.uk/" target="_blank" rel="noreferrer">
-                <Image src='/CCC_Logo_export.png' alt='Calvary Chapel Cambridge logo' width={350} height={66} className='p-8'/>
-              </a>
-            <p className="text-center text-xs leading-5 text-white">
-              &copy; 2023 Calvary Chapel Cambridge. Company Number: 7609516. Charity Number: 1141624.
+      <div className="bg-gray-50 pt-12 sm:pt-16" id="contact">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="bville text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Connect with us on Social Media
+            </h2>
+            <p className="mt-3 text-xl text-gray-500 sm:mt-4">
+              To keep up to date or to find out about the latest events follow us on our social channels.
             </p>
           </div>
         </div>
-      </footer>
+        <div className="mt-10 bg-white pb-12 sm:pb-16">
+          <div className="relative">
+            <div className="absolute inset-0 h-1/2 bg-gray-50" />
+            <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="mx-auto max-w-4xl">
+                <div className="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-4">
+                {navigation.map((item) => (
+                    <div key={item.name} className="flex flex-col border-b border-gray-100 p-6 rounded-lg text-center sm:border-0 sm:border-r">
+                      <div className="order-1 text-5xl font-bold text-gray-900 flex justify-center">
+                          <a href={item.href} target="_blank" rel="noreferrer" className="text-gray-900 hover:text-gray-700">
+                            <item.icon className="h-6 w-6 content-center" aria-hidden="true" />
+                          </a>
+                        </div>
+                        <div className="order-2 mt-2 text-lg font-medium leading-6 text-gray-500">
+                            <a href={item.href} target="_blank" rel="noreferrer" className="text-gray-900 hover:text-gray-700">
+                                <span>{item.name}</span>  
+                            </a>                            
+                        </div>
+                      
+                     </div>
+                ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
   

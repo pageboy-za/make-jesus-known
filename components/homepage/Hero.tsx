@@ -9,18 +9,19 @@ import {useState } from 'react'
 import Menu from './menu'
 
 
-const navigation = [
-    { name: 'About', href: '#about' },
+const menuArr = [
+    { name: 'About', href: '/#about' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '#footer' },
+    { name: 'Contact', href: '/#contact' },
   ]
 
-export default function newHero() {
-  const [mobileMenuOpen, setMobileMenuOpen ] = useState(false)
 
+export default function newHero(): JSX.Element {
+  const [mobileMenuOpen, setMobileMenuOpen ] = useState(false)
+ 
   return (
-      <div className="bg-gray-900 px-6 lg:px-8">
-        <Menu />
+      <div className="bg-gray-900 px-6 lg:px-8 rounded-b-lg">
+        <Menu nav={menuArr} />
         <div className="mx-auto max-w-2xl py-16 sm:py-16 lg:py-10">
           <div className="text-center">
             <h1 className="bville uppercase text-4xl font-bold tracking-tight text-white sm:text-6xl">
@@ -31,7 +32,7 @@ export default function newHero() {
             </div>
           </div>
         </div>
-        <div>
+        <div className='py-8'>
         <VideoComponent vidSrc="https://www.youtube.com/watch?v=BRNMHRtyo84" muted={true} autoPlay={true} controls={true} />
         </div>
       </div>

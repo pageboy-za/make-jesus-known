@@ -62,7 +62,7 @@ export default function About() {
               We believe that true and abundant life begins by believing in the finished work of Jesus Christ on the cross of Calvary.
               </p>
             </div>
-            <ScriptureQuote reference={"Matthew 11:28-30"}>
+            <ScriptureQuote reference={"Matthew 11:28-30"} version={"NKJV"}>
                 Come to Me, all you who labor and are heavy laden, and I will give you rest.
                 Take My yoke upon you and learn from Me, for I am gentle and lowly in heart,
                 and you will find rest for your souls. For My yoke is easy and My burden is light.”

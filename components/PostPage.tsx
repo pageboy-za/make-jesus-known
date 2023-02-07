@@ -11,10 +11,17 @@ import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 import { notFound } from 'next/navigation'
-import ReactPlayer from 'react-player'
 
+import Footer from './global/footer'
+import Menu from './homepage/menu'
 import VideoComponent from './videoComponent'
 
+const menuArr = [
+  {name: 'Home', href: '/'},
+  { name: 'About', href: '/#about' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/#contact' },
+]
 export interface PostPageProps {
   preview?: boolean
   loading?: boolean
@@ -43,6 +50,7 @@ export default function PostPage(props: PostPageProps) {
 
       <Layout preview={preview} loading={loading}>
         <Container>
+        <Menu nav={menuArr} />
           <BlogHeader title={title} level={2} />
           {preview && !post ? (
             <PostTitle>Loading…</PostTitle>
@@ -69,6 +77,7 @@ export default function PostPage(props: PostPageProps) {
               {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
             </>
           )}
+          <Footer />
         </Container>
       </Layout>
     </>

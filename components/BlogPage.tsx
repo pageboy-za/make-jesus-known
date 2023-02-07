@@ -7,10 +7,16 @@ import MoreStories from 'components/MoreStories'
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
-import Menu from './homepage/menu'
 
 import Footer from './global/footer'
+import Menu from './homepage/menu'
 
+const menuArr = [
+  {name: 'Home', href: '/'},
+  { name: 'About', href: '/#about' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '#footer' },
+]
 
 export interface IndexPageProps {
   preview?: boolean
@@ -35,7 +41,7 @@ export default function IndexPage(props: IndexPageProps) {
         </div>
 
         <Container>
-          <Menu />
+          <Menu nav={menuArr} />
           <BlogHeader title={title} description={description} level={1} />
           {heroPost && (
             <HeroPost

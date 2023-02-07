@@ -13,8 +13,6 @@ export default function VideoComponent(
 ) {
   const { vidSrc, muted, autoPlay , controls } = props
   return (
-
-
       <div className='relative pb-[56.25%]'>
         <ReactPlayer
           url={vidSrc}
@@ -24,11 +22,6 @@ export default function VideoComponent(
           controls={controls}
           muted={muted}
           className='absolute top-0 left-0'
-          config={{
-              playerVars: { "showinfo": "0",
-                "cc_load_policy":"1",
-              } 
-          }}
         />
       </div>
   )
