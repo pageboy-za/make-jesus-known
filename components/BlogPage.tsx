@@ -15,7 +15,7 @@ const menuArr = [
   {name: 'Home', href: '/'},
   { name: 'About', href: '/#about' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '#footer' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 export interface IndexPageProps {

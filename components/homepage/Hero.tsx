@@ -12,7 +12,7 @@ import Menu from './menu'
 const menuArr = [
     { name: 'About', href: '/#about' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Contact', href: '/contact' },
   ]
 
 
@@ -28,7 +28,7 @@ export default function newHero(): JSX.Element {
               Make Jesus Known
             </h1>
             <div className="mt-6 text-lg leading-8 text-gray-300">
-              A project by Calvary Chapel Cambridge 
+              A campaign by Calvary Chapel Cambridge 
             </div>
           </div>
         </div>
