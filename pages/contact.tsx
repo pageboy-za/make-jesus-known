@@ -1,5 +1,6 @@
 import Footer from 'components/global/footer'
 import Menu from 'components/homepage/menu'
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -20,6 +21,9 @@ const location = {
   export default function Example() {
     return (
     <>
+    <Head>
+      <title>Contact or visit us</title>
+    </Head>
     <div className="container mx-auto sm:px-6 lg:px-8">
     <Menu nav={menuArr} />
     <div className="overflow-hidden bg-white sm:rounded-lg">

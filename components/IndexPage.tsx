@@ -26,6 +26,7 @@ export default function IndexPage(props: IndexPageProps) {
   return (
     <>
       <Head>
+        <title>Make Jesus Known</title>
         <IndexPageHead settings={settings} />
       </Head>
       <Layout preview={preview} loading={loading}>
