@@ -17,7 +17,7 @@ export default function IndexPageHead({ settings }: IndexPageHeadProps) {
 
   return (
     <>
-      <title>{title}</title>
+      <title>Make Jesus Known</title>
       <BlogMeta />
       <MetaDescription value={description} />
       <script data-no-cookie async src="https://cdn.splitbee.io/sb.js"></script>
