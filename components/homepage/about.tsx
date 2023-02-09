@@ -20,7 +20,7 @@ import Image from 'next/image'
 export default function About() {
   return (
     <div className="overflow-hidden bg-white" id="about">
-      <div className="relative mx-auto max-w-7xl py-16 px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl pt-8 pb-16 px-6 lg:px-8">
         <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
           <div>
             <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl bville">About Calvary Chapel Cambridge</h3>
