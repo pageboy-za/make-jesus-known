@@ -13,8 +13,7 @@ import Menu from './homepage/menu'
 
 const menuArr = [
   {name: 'Home', href: '/'},
-  { name: 'About', href: '/#about' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'About', href: '/#about' }, 
   { name: 'Contact', href: '/contact' },
 ]
 
@@ -42,7 +41,7 @@ export default function IndexPage(props: IndexPageProps) {
 
         <Container>
           <Menu nav={menuArr} />
-          <BlogHeader title={title} description={description} level={1} />
+          <BlogHeader title={title} description={description} level={1} href={'/'} />
           {heroPost && (
             <HeroPost
               title={heroPost.title}

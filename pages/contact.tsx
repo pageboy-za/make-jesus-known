@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Contact from '../components/homepage/contact'
+import Contact from '../components/homepage/ContactComponent'
 import Map from '../components/MapComponent'
 
 const location = {
@@ -47,8 +47,10 @@ const location = {
         <div className="px-4 py-5 sm:px-6">
           <h2 className='bville text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center'>Come and worship with us</h2>
         </div>
-        <div className="px-4 py-5 sm:p-6 h-60" id='map'>
+        <div className="px-4 py-5 sm:p-6 h-96" id='map'>
+
             <Map location={location} /> 
+
         </div>
         <div className="px-4 py-4 sm:px-6">
           <h2 className='text-center text-2xl'>{location.address}</h2>

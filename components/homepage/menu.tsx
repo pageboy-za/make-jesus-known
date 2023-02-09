@@ -11,7 +11,7 @@ export default function Menu({nav}) {
   const navigation = nav
 
   return (
-<div className="bg-gray-900 px-6 lg:px-8">
+<div className="bg-gray-900 mb-6 px-6 lg:px-8 pb-6 lg:pb-8">
         <nav className="flex items-center justify-between pt-6" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">

@@ -9,7 +9,7 @@ import Head from 'next/head'
 import Footer from './global/footer'
 import SectionHeader from './global/sectionHeader'
 import About from './homepage/about'
-import Contact from './homepage/contact'
+import Contact from './homepage/ContactComponent'
 import NewHero from './homepage/Hero'
 
 export interface IndexPageProps {

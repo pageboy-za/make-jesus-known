@@ -4,7 +4,7 @@ import React, { useEffect,useState } from 'react';
   
   const mapContainerStyle = {
     width: '100%',
-    height: '100%',
+    height: '480px',
   };
   
   const options = {

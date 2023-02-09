@@ -7,16 +7,18 @@ export default function BlogHeader({
   title,
   description,
   level,
+  href,
 }: {
   title: string
   description?: any[]
   level: 1 | 2
+  href: string
 }) {
   switch (level) {
     case 1:
       return (
         <header className="mt-16 mb-10 flex flex-col items-center md:mb-12 md:flex-row md:justify-between">
-          <Link href={'/'}>
+          <Link href={href} className="hover:underline">
           <h1 className={'text-6xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl bville'} >
             {title}
           </h1>
@@ -33,7 +35,7 @@ export default function BlogHeader({
       return (
         <header>
           <h2 className="mt-8 mb-20 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
-            <Link href="/" className="hover:underline">
+            <Link href={href} className="hover:underline">
               {title}
             </Link>
           </h2>

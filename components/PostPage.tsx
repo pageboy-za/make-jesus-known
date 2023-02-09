@@ -19,8 +19,7 @@ import VideoComponent from './videoComponent'
 const menuArr = [
   {name: 'Home', href: '/'},
   { name: 'About', href: '/#about' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/#contact' },
+  { name: 'Contact', href: '/contact' },
 ]
 export interface PostPageProps {
   preview?: boolean
@@ -51,7 +50,7 @@ export default function PostPage(props: PostPageProps) {
       <Layout preview={preview} loading={loading}>
         <Container>
         <Menu nav={menuArr} />
-          <BlogHeader title={title} level={2} />
+          <BlogHeader title={title} level={2} href={'/blog'} />
           {preview && !post ? (
             <PostTitle>Loading…</PostTitle>
           ) : (
