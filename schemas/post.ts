@@ -3,6 +3,7 @@ import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
 import authorType from './author'
+import youtubeType from './youtube'
 
 /**
  * This file is the schema definition for a post.
@@ -73,7 +74,8 @@ export default defineType({
     defineField({
       name: 'sermonVideo',
       title: 'Sermon Video',
-      type: 'string',
+      type: 'reference',
+      to: [{type: 'youtube'}],
     }),
   ],
   preview: {

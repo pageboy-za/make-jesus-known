@@ -1,4 +1,4 @@
-import { GoogleMap, Marker,useLoadScript } from '@react-google-maps/api'
+import { GoogleMap, InfoWindow,Marker,useLoadScript } from '@react-google-maps/api'
 import React, { useEffect,useState } from 'react';
 
   
@@ -43,6 +43,20 @@ import React, { useEffect,useState } from 'react';
         {markers.map((marker) => (
           <Marker key={marker.lat} position={marker} />
         ))}
+        <InfoWindow
+      // onLoad={onLoad}
+      position={location}
+    >
+      <div className="bg-white opacity-75 p-8 border shadow-xl" >
+        <div className="text-xl font-gray-900" >
+        <h1 className='text-center'>Calvary Chapel Cambridge</h1>
+        <div className='text-base text-gray-700'>
+          {location.address}
+        </div>
+        </div>
+      </div>
+    </InfoWindow>
+
       </GoogleMap>
     );
   };

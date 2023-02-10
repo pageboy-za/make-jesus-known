@@ -88,7 +88,7 @@ const navigation = [
                 <Image src='/CCC_Logo_export.png' alt='Calvary Chapel Cambridge logo' width={350} height={66} className='p-8'/>
               </a>
             <p className="text-center text-xs leading-5 text-white">
-              &copy; 2023 Calvary Chapel Cambridge. Company Number: 7609516. Charity Number: 1141624.
+              &copy; 2023 Calvary Chapel Cambridge. <br/> Company Number: 7609516. Charity Number: 1141624.
             </p>
           </div>
         </div>

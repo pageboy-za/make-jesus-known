@@ -10,7 +10,7 @@ import Footer from './global/footer'
 import SectionHeader from './global/sectionHeader'
 import About from './homepage/about'
 import Contact from './homepage/ContactComponent'
-import NewHero from './homepage/Hero'
+import Hero from './homepage/Hero'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -33,7 +33,7 @@ export default function IndexPage(props: IndexPageProps) {
         <div className=''>
         </div>
         <Container>
-          <NewHero />
+          <Hero />
           <SectionHeader>Find out more about us</SectionHeader>
           <About />
           <SectionHeader>Keep in Contact with Us</SectionHeader>

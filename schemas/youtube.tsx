@@ -3,15 +3,20 @@ import { defineField, defineType } from 'sanity'
 
 export default defineType({
     name: 'youtube',
-    icon: DocumentVideoIcon,
-    type: 'object',
     title: 'YouTube Embed',
+    icon: DocumentVideoIcon,
+    type: 'document',
     fields: [
         defineField({
-            name: 'url',
-            title: 'YouTube video URL',
+            name: 'URL',
+            title: 'YouTube URL',
             type: 'url',
             validation: (rule) => rule.required(),
+          }),
+          defineField({
+            name: 'title',
+            title: 'Title',
+            type: 'string', 
           }),
     ]
   })

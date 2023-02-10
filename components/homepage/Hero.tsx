@@ -1,10 +1,5 @@
-/* This example requires Tailwind CSS v3.0+ */
-import { Dialog, Transition } from '@headlessui/react'
-import { Bars3Icon,XMarkIcon} from '@heroicons/react/24/outline'
 import VideoComponent from 'components/videoComponent'
-import Link from 'next/link'
 import React from 'react'
-import {useState } from 'react'
 
 import Menu from './menu'
 
@@ -16,7 +11,7 @@ const menuArr = [
   ]
 
 
-export default function newHero(): JSX.Element {
+export default function Hero(): JSX.Element {
   return (
       <div className="bg-gray-900 px-6 lg:px-8 rounded-b-lg">
         <Menu nav={menuArr} />

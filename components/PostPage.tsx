@@ -44,6 +44,7 @@ export default function PostPage(props: PostPageProps) {
   return (
     <>
       <Head>
+        <title>{post.title + ' – Blog Post '}</title>
         <PostPageHead settings={settings} post={post} />
       </Head>
 

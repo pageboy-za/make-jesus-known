@@ -32,6 +32,7 @@ export default function IndexPage(props: IndexPageProps) {
   return (
     <>
       <Head>
+        <title>{title}</title>
         <IndexPageHead settings={settings} />
       </Head>
       <Layout preview={preview} loading={loading}>
