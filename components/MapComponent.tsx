@@ -4,7 +4,7 @@ import React, { useEffect,useState } from 'react';
   
   const mapContainerStyle = {
     width: '100%',
-    height: '480px',
+    height: '350px',
   };
   
   const options = {
@@ -49,7 +49,7 @@ import React, { useEffect,useState } from 'react';
     >
       <div className="bg-white opacity-75 p-8 border shadow-xl" >
         <div className="text-xl font-gray-900" >
-        <h1 className='text-center'>Calvary Chapel Cambridge</h1>
+        <h1 className='text-center font-semi-bold'>{location.name}</h1>
         <div className='text-base text-gray-700'>
           {location.address}
         </div>

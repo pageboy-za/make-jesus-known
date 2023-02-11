@@ -8,9 +8,10 @@ import Contact from '../components/homepage/ContactComponent'
 import Map from '../components/MapComponent'
 
 const location = {
-    address: '54 Cameron Rd, Cambridge CB4 2LY',
-    lat: 52.23085359254046, 
-    lng: 0.12949123896696874,
+  name:'Calvary Chapel Cambridge',
+  address: '54 Cameron Rd, Cambridge CB4 2LY',
+  lat: 52.23085359254046, 
+  lng: 0.12949123896696874,
   }
   const menuArr = [
     {name: 'Home', href: '/'},  
@@ -43,7 +44,7 @@ const location = {
         </div>
       </div>
     <Contact/>
-      <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white ">
+      <div className="divide-y divide-gray-200 rounded-lg bg-white ">
         <div className="px-4 py-5 sm:px-6">
           <h2 className='bville text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center'>Come and worship with us</h2>
         </div>

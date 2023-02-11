@@ -4,9 +4,11 @@
 
 .portableText p,
 .portableText ul,
-.portableText ol,
-.portableText blockquote {
+.portableText ol {
   @apply my-6;
+}
+.portableText blockquote {
+  @apply border-l-2 border-gray-400 pl-4;
 }
 
 .portableText h2 {
