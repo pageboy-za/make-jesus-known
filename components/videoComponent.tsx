@@ -9,11 +9,14 @@ export default function VideoComponent(
     autoPlay?: boolean
     controls?: boolean
     captions?: boolean
+    title?: string
   }
 ) {
-  const { vidSrc, muted, autoPlay , controls } = props
+  const { vidSrc, muted, autoPlay , controls, title } = props
   return (
       <div className='relative pb-[56.25%]'>
+        <div className="text-2xl font-bold">{title}</div>
+        <div>
         <ReactPlayer
           url={vidSrc}
           width='100%'
@@ -23,6 +26,7 @@ export default function VideoComponent(
           muted={muted}
           className='absolute top-0 left-0'
         />
+        </div>
       </div>
   )
 }

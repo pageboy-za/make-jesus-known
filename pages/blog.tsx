@@ -29,7 +29,7 @@ export default function Page(props: PageProps) {
     return (
       <PreviewSuspense
         fallback={
-          <BLogPage loading preview posts={posts} settings={settings} />
+          <BlogPage loading preview posts={posts} settings={settings} />
         }
       >
         <PreviewIndexPage token={token} />
