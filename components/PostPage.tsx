@@ -14,7 +14,6 @@ import { notFound } from 'next/navigation'
 
 import Footer from './global/footer'
 import Menu from './homepage/menu'
-import VideoComponent from './videoComponent'
 
 const menuArr = [
   {name: 'Home', href: '/'},
@@ -64,12 +63,6 @@ export default function PostPage(props: PostPageProps) {
                   author={post.author}
                 />
 
-                {
-                  post.sermonVideo ?
-                  <VideoComponent vidSrc={post.sermonVideo} muted={false} autoPlay={false} controls={false} />
-                  : 
-                  <></>
-                }
                 <PostBody content={post.content} />
 
               </article>

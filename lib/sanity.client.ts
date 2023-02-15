@@ -1,16 +1,18 @@
 import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api'
 import {
+  type About,
   type Post,
   type Settings,
-  type About,
+  aboutQuery,
   indexQuery,
   postAndMoreStoriesQuery,
   postBySlugQuery,
   postSlugsQuery,
   settingsQuery,
-  aboutQuery,
 } from 'lib/sanity.queries'
 import { createClient } from 'next-sanity'
+import imageUrlBuilder from "@sanity/image-url"
+import { SanityImageSource } from "@sanity/image-url/lib/types/types"
 
 /**
  * Checks if it's safe to create a client instance, as `@sanity/client` will throw an error if `projectId` is false
@@ -72,3 +74,8 @@ export async function getPostAndMoreStories(
   return { post: null, morePosts: [] }
 }
 
+const builder = imageUrlBuilder(client)
+
+export const urlFor = (source: SanityImageSource) => {
+	return builder.image(source)
+}

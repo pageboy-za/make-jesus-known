@@ -7,21 +7,26 @@
  * https://portabletext.org/
  *
  */
-import { PortableText} from '@portabletext/react'
-import {getImageDimensions} from '@sanity/asset-utils'
-import urlBuilder from '@sanity/image-url'
-import Image from 'next/image'
+import {PortableText} from '@portabletext/react';
+import {getImageDimensions} from '@sanity/asset-utils';
+import { urlFor } from "../lib/sanity.client"
 
-import styles from './PostBody.module.css'
+import Image from 'next/image';
+
+
+import styles from './PostBody.module.css';
 import VideoComponent from './videoComponent';
+
+
 
 
 // Barebones lazy-loaded image component
 const ImageComponent = ({value}) => {
   const {width, height} = getImageDimensions(value)
+  const src = urlFor(value.asset).url()
   return (
     <Image
-      src={urlBuilder().image(value).width(800).fit('max').auto('format').url()}
+      src={src}
       alt={value.alt || ' '}
       loading="lazy"
       width={width}
@@ -31,6 +36,7 @@ const ImageComponent = ({value}) => {
         aspectRatio: width / height,
       }}
     />
+
   )
 } 
 
@@ -47,7 +53,7 @@ export default function PostBody({ content }) {
       <PortableText value={content} 
       components={{
         types: {
-          //image: ImageComponent,
+          image: ImageComponent,
           youtube: PTVideo,
         },
       }}
@@ -55,3 +61,7 @@ export default function PostBody({ content }) {
     </div>
   )
 }
+function sanityClient(arg0: { projectId: string; dataset: string; useCdn: boolean }) {
+  throw new Error('Function not implemented.')
+}
+
