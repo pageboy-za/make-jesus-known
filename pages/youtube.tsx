@@ -1,10 +1,9 @@
 import Footer from 'components/global/footer'
 import Menu from 'components/homepage/menu'
+import PostTitle from 'components/PostTitle'
 import Container from 'components/structural/container'
 import VideoComponent from 'components/videoComponent'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
 
   const menuArr = [
     {name: 'Home', href: '/'},  
@@ -38,6 +37,10 @@ import Link from 'next/link'
     <div className="container mx-auto sm:px-6 lg:px-8">
     <Menu nav={menuArr} />
     <Container>
+        <div>
+            <PostTitle>Youtube Feed</PostTitle>
+            <p className='pb-8'>Miss out on a sermon? Visit this page to see all our live streams in this series</p>
+        </div>
         <div id="SermonVideos">
             <div className='grid grid-cols-1 md:grid-cols-2'>
                 {data.items.map((item) => (
@@ -50,9 +53,7 @@ import Link from 'next/link'
             </div>
         </div>
     </Container>
-   
-
-      <Footer/>
+    <Footer/>
     </div>
     </>
     )

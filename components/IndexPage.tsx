@@ -10,7 +10,7 @@ import Footer from './global/footer'
 import SectionHeader from './global/sectionHeader'
 import About from './homepage/about'
 import Contact from './homepage/ContactComponent'
-import Hero from './homepage/Hero'
+import Hero from './homepage/HeroCopy'
 import LatestSermon from './homepage/latestSermon'
 
 export interface IndexPageProps {

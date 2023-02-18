@@ -34,11 +34,13 @@ export default function YouTubePlaylist() {
   }
 
   return (
+    <Container>
     <div>
       {videoId && (
         <VideoComponent vidSrc={'https://www.youtube.com/watch?v='+videoId} />
       )}
     </div>
+    </Container>
   );
 }
 
