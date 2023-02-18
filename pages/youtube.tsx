@@ -17,7 +17,7 @@ import Head from 'next/head'
   const API_URL = YOUTUBE_PLAYLIST_API+"?part=snippet&playlistId="+playListId+"&key="+api_Key;
 
   export async function getServerSideProps() {
-    console.log(API_URL)
+
     const res = await fetch(API_URL);
     const data = await res.json();
    
@@ -28,7 +28,6 @@ import Head from 'next/head'
     }
   }
   export default function YouTubeList({ data }) {
-    console.log(data);
     return (
     <>
     <Head>
