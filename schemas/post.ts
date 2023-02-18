@@ -60,9 +60,10 @@ export default defineType({
           }
         ]
       },
-        { type:'youtube' }
-      ],
-    }),
+      {
+        type:'youtube',
+       },
+    ]}),
       defineField({
         name: 'excerpt',
         title: 'Excerpt',

@@ -11,6 +11,7 @@ import SectionHeader from './global/sectionHeader'
 import About from './homepage/about'
 import Contact from './homepage/ContactComponent'
 import Hero from './homepage/Hero'
+import LatestSermon from './homepage/latestSermon'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -34,6 +35,8 @@ export default function IndexPage(props: IndexPageProps) {
         </div>
         <Container>
           <Hero />
+          <SectionHeader>Find out more about us</SectionHeader>
+          <LatestSermon />
           <SectionHeader>Find out more about us</SectionHeader>
           <About />
           <SectionHeader>Keep in Contact with Us</SectionHeader>

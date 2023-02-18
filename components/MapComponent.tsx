@@ -14,7 +14,7 @@ import React, { useEffect,useState } from 'react';
   
   export default function Map({location}) {
     const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+      googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
     });
 
     const center = {
@@ -30,7 +30,7 @@ import React, { useEffect,useState } from 'react';
     ]);
   
     if (loadError) return (<span>Error loading maps</span>);
-    if (!isLoaded) return (<span>Loading Maps</span>);
+    if (!isLoaded) return (<span>Loading Maps ...</span>);
   
     return (
       <GoogleMap

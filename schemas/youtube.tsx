@@ -33,7 +33,7 @@ export default defineType({
     name: 'youtube',
     title: 'YouTube Embed',
     icon: DocumentVideoIcon,
-    type: 'document',
+    type: 'object',
     fields: [
       defineField({
         name: 'title',

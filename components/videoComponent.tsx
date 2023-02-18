@@ -14,9 +14,9 @@ export default function VideoComponent(
 ) {
   const { vidSrc, muted, autoPlay , controls, title } = props
   return (
+    <div>
+    <div className="text-xl font-bold pb-2">{title}</div>
       <div className='relative pb-[56.25%]'>
-        <div className="text-2xl font-bold">{title}</div>
-        <div>
         <ReactPlayer
           url={vidSrc}
           width='100%'
