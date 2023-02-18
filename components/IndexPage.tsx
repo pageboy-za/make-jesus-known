@@ -35,11 +35,11 @@ export default function IndexPage(props: IndexPageProps) {
         </div>
         <Container>
           <Hero />
-          <SectionHeader>Find out more about us</SectionHeader>
+          <SectionHeader>Watch the latest sermon in our series</SectionHeader>
           <LatestSermon />
           <SectionHeader>Find out more about us</SectionHeader>
           <About />
-          <SectionHeader>Keep in Contact with Us</SectionHeader>
+          <SectionHeader>Keep in contact with us</SectionHeader>
           <Contact />
           <SectionHeader>Check out our blog</SectionHeader>
 

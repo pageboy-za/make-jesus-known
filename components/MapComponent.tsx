@@ -30,7 +30,7 @@ import React, { useEffect,useState } from 'react';
     ]);
   
     if (loadError) return (<span>Error loading maps</span>);
-    if (!isLoaded) return (<span>Loading Maps ...</span>);
+    if (!isLoaded) return (<span>Loading Maps</span>);
   
     return (
       <GoogleMap
