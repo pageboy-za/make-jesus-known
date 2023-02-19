@@ -53,14 +53,14 @@ export default function Hero(): JSX.Element {
               />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <div className="relative w-20 h-20 rounded-full bg-gray-400 opacity-60 flex justify-center items-center hover:shadow-xl hover:border-3 hover:border-white hover:opacity-80">
-                <div className="relative w-20 h-20 text-white flex justify-center items-center">
-                  <a onClick={openDialog} >
+                <div className="relative w-20 h-20 text-white flex flex-col justify-center items-center">
+                
+                  <a onClick={openDialog} href="#">
                     <PlayBtn />
                   </a>
-                
                 </div>
-              </div>
             </div>
+            
           </div>
           <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -90,16 +90,30 @@ export default function Hero(): JSX.Element {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="w-full max-w-6xl">
+              <div className="w-full max-w-6xl max-h-screen flex flex-col">
                 <div className="relative pb-[56.25%]">
                 <VideoComponent vidSrc="https://www.youtube.com/watch?v=BRNMHRtyo84" autoPlay={true} controls={true} />
                 </div>
               </div>
             </Transition.Child>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+          <div className='flex flex-col first-letter:items-center'>
+          <button className='bg-black text-white font-semibold' onClick={() => setIsOpen(false)}>Close</button>
+          </div>
+            </Transition.Child>
           </div>
         </Dialog>
       </Transition>
         </div>
+      </div>
       </div>
   )
 }

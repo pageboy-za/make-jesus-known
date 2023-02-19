@@ -13,7 +13,7 @@ import Head from 'next/head'
   ]
   const YOUTUBE_PLAYLIST_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
   const api_Key = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
-  const playListId = 'PLLpdmFmcfglepABDwnzAsuXzKTgHeMN1S'
+  const playListId = 'PLGc_P8BEcwEuDD3jDR7dVo-98nVJ53rTm'
   const API_URL = YOUTUBE_PLAYLIST_API+"?part=snippet&playlistId="+playListId+"&key="+api_Key;
 
   export async function getServerSideProps() {
