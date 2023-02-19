@@ -22,11 +22,14 @@ import Head from 'next/head'
    
     return {
         props: {
-            data
+            data  
         }
     }
   }
   export default function YouTubeList({ data }) {
+    //console.log(data)
+    const d = data.items.reverse()
+    //console.log(d)
     return (
     <>
     <Head>
@@ -41,11 +44,10 @@ import Head from 'next/head'
         </div>
         <div id="SermonVideos">
             <div className='grid grid-cols-1 md:grid-cols-2'>
-                {data.items.map((item) => (
-                    <div className='px-6 pb-6 pt-2 md:basis-1/2' key="item.id"> 
-                    <VideoComponent vidSrc={'https://www.youtube.com/watch?v='+item.snippet.resourceId.videoId} title={item.snippet.title}></VideoComponent>
+                {d.map((item) => (
+                    <div className='px-6 pb-6 pt-2 md:basis-1/2' key={item.etag}> 
+                    <VideoComponent vidSrc={'https://www.youtube.com/watch?v='+item.snippet.resourceId.videoId} title={item.snippet.title} date={item.snippet.publishedAt}></VideoComponent>
                     </div>  
-                        
                 ))}
 
             </div>

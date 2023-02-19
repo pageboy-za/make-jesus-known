@@ -1,5 +1,8 @@
 import dynamic from "next/dynamic";
+
+import PostDate from "./PostDate";
 const ReactPlayer = dynamic(() => import("react-player/youtube"), { ssr: false });
+
 
 
 export default function VideoComponent(
@@ -10,12 +13,14 @@ export default function VideoComponent(
     controls?: boolean
     captions?: boolean
     title?: string
+    date?: string
   }
 ) {
-  const { vidSrc, muted, autoPlay , controls, title } = props
+  const { vidSrc, muted, autoPlay , controls, title, date} = props
   return (
     <div>
     <div className="text-xl font-bold pb-2">{title}</div>
+    <div className="text-base text-right"><PostDate dateString={date} /></div>
       <div className='relative pb-[56.25%]'>
         <ReactPlayer
           url={vidSrc}

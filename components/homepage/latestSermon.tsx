@@ -18,7 +18,7 @@ export default function YouTubePlaylist() {
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
-        setVideoId(data.items[0].snippet.resourceId.videoId);
+        setVideoId(data.items[data.items.length-1].snippet.resourceId.videoId);
       })
       .catch((error) => {
         setLoading(false);

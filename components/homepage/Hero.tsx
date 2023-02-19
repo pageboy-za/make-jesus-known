@@ -68,7 +68,7 @@ export default function Hero(): JSX.Element {
           className="fixed inset-0 z-10 overflow-y-auto"
           onClose={() => setIsOpen(false)}
         >
-          <div className="min-h-screen min-w-full bg-black bg-opacity-80 flex items-center justify-center px-4">
+          <div className="min-h-screen min-w-full bg-black bg-opacity-80 flex flex-col items-center justify-center px-4">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -94,20 +94,10 @@ export default function Hero(): JSX.Element {
                 <div className="relative pb-[56.25%]">
                 <VideoComponent vidSrc="https://www.youtube.com/watch?v=BRNMHRtyo84" autoPlay={true} controls={true} />
                 </div>
+                <div className='flex flex-col items-center'>
+                  <button className='bg-black text-white font-semibold' onClick={() => setIsOpen(false)}>Close</button>
+                </div>  
               </div>
-            </Transition.Child>
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-          <div className='flex flex-col first-letter:items-center'>
-          <button className='bg-black text-white font-semibold' onClick={() => setIsOpen(false)}>Close</button>
-          </div>
             </Transition.Child>
           </div>
         </Dialog>
