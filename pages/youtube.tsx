@@ -11,6 +11,7 @@ import Head from 'next/head'
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ]
+
   const YOUTUBE_PLAYLIST_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
   const api_Key = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
   const playListId = 'PLGc_P8BEcwEuDD3jDR7dVo-98nVJ53rTm'
@@ -19,16 +20,17 @@ import Head from 'next/head'
   export async function getServerSideProps() {
     const res = await fetch(API_URL);
     const data = await res.json();
-   
+    const d = data.items.reverse()
     return {
         props: {
-            data  
+            data,
+            d
         }
     }
   }
-  export default function YouTubeList({ data }) {
+  export default function YouTubeList({ d }) {
     //console.log(data)
-    const d = data.items.reverse()
+    
     //console.log(d)
     return (
     <>
