@@ -8,10 +8,13 @@ const api_Key = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 const playListId = 'PLGc_P8BEcwEuDD3jDR7dVo-98nVJ53rTm'
 const API_URL = YOUTUBE_PLAYLIST_API+"?part=snippet&playlistId="+playListId+"&key="+api_Key;
 
-export default function YouTubePlaylist() {
+
+export default function YouTubePlaylist( ) {
   const [videoId, setVideoId] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  
 
   useEffect(() => {
     fetch(API_URL)
@@ -25,6 +28,7 @@ export default function YouTubePlaylist() {
         setError(error);
       });
   }, []);
+  
 
   if (loading) {
     return <p>Loading...</p>;
@@ -39,7 +43,7 @@ export default function YouTubePlaylist() {
       <div>
         Watch our latest sermon here, if you missed a different one or want to watch one again have a look here on this <Link href='/youtube' className="font-semibold hover:underline">page</Link>.
       </div>
-    <div>
+    <div id="video">
       {videoId && (
         <VideoComponent vidSrc={'https://www.youtube.com/watch?v='+videoId} />
       )}

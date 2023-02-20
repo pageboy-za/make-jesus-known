@@ -5,6 +5,8 @@ import Container from 'components/structural/container'
 import VideoComponent from 'components/videoComponent'
 import Head from 'next/head'
 
+
+
   const menuArr = [
     {name: 'Home', href: '/'},  
     { name: 'About', href: '/#about' },
@@ -17,21 +19,26 @@ import Head from 'next/head'
   const playListId = 'PLGc_P8BEcwEuDD3jDR7dVo-98nVJ53rTm'
   const API_URL = YOUTUBE_PLAYLIST_API+"?part=snippet&playlistId="+playListId+"&key="+api_Key;
 
-  export async function getServerSideProps() {
+  export async function getStaticProps() {
     const res = await fetch(API_URL);
     const data = await res.json();
-    const d = data.items.reverse()
+    const vids = data.items.reverse()
     return {
-        props: {
+        props: {  
             data,
-            d
-        }
+            vids
+        },
+        revalidate: 86400,
     }
   }
-  export default function YouTubeList({ d }) {
-    //console.log(data)
+  
+  export default function YouTubeList({data, vids }) {
+    console.log("data")
+
+    console.log(data)
+    console.log("Vids")
     
-    //console.log(d)
+    console.log(vids)
     return (
     <>
     <Head>
@@ -46,7 +53,7 @@ import Head from 'next/head'
         </div>
         <div id="SermonVideos">
             <div className='grid grid-cols-1 md:grid-cols-2'>
-                {d.map((item) => (
+                {vids.map((item) => (
                     <div className='px-6 pb-6 pt-2 md:basis-1/2' key={item.etag}> 
                     <VideoComponent vidSrc={'https://www.youtube.com/watch?v='+item.snippet.resourceId.videoId} title={item.snippet.title} date={item.snippet.publishedAt}></VideoComponent>
                     </div>  

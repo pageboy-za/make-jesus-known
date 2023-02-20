@@ -46,6 +46,7 @@ export default function Hero(): JSX.Element {
           <div className='relative w-full h-full'>
               <Image
                 src="/poster.jpg"
+                priority
                 alt="video posterimage"
                 width={1280}
                 height={720}
