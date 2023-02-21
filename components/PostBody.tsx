@@ -9,12 +9,10 @@
  */
 import {PortableText} from '@portabletext/react';
 import {getImageDimensions} from '@sanity/asset-utils';
-import { urlFor } from "../lib/sanity.client"
-
 import Image from 'next/image';
 
-
-import styles from './PostBody.module.css';
+import { urlFor } from "../lib/sanity.client"
+// import styles from './PostBody.module.css';
 import VideoComponent from './videoComponent';
 
 
@@ -49,7 +47,7 @@ const PTVideo =({value}) => {
 
 export default function PostBody({ content }) {
   return (
-    <div className={`mx-auto max-w-2xl ${styles.portableText}`}>
+    <div className='mx-auto max-w-2xl prose md:prose-lg lg:prose-xl'>
       <PortableText value={content} 
       components={{
         types: {

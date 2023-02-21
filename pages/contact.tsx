@@ -17,7 +17,7 @@ const location = {
     {name: 'Home', href: '/'},  
     { name: 'About', href: '/#about' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
+    {name:'Video Sermons', href:'/youtube'},
   ]
   export default function Example() {
     return (

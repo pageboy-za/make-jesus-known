@@ -14,9 +14,12 @@ export default function VideoComponent(
     captions?: boolean
     title?: string
     date?: string
+    light?: boolean
+    playIcon?: any
+    poster?: any
   }
 ) {
-  const { vidSrc, muted, autoPlay , controls, title, date} = props
+  const { vidSrc, muted, autoPlay, controls, light, poster, title, date} = props
   return (
     <div>
     <div className="text-xl font-bold pb-2">{title}</div>
@@ -29,6 +32,7 @@ export default function VideoComponent(
           playing={autoPlay}
           controls={controls}
           muted={muted}
+          light={light}
           className='absolute top-0 left-0'
         />
         </div>
