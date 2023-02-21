@@ -33,12 +33,7 @@ import Head from 'next/head'
   }
   
   export default function YouTubeList({data, vids }) {
-    console.log("data")
-
-    console.log(data)
-    console.log("Vids")
     
-    console.log(vids)
     return (
     <>
     <Head>

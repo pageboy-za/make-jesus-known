@@ -15,6 +15,7 @@ const menuArr = [
   {name: 'Home', href: '/'},
   { name: 'About', href: '/#about' }, 
   { name: 'Contact', href: '/contact' },
+  {name:'Video Sermons', href:'/youtube'},
 ]
 
 export interface IndexPageProps {
