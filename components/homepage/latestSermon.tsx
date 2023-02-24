@@ -1,3 +1,4 @@
+import SpinLoading from 'components/global/SpinLoading';
 import Container from 'components/structural/container'
 import VideoComponent from 'components/videoComponent'
 import Link from 'next/link';
@@ -31,24 +32,35 @@ export default function YouTubePlaylist( ) {
   
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (  
+      <>
+      <p className='text-center'>Loading...</p>
+      <SpinLoading/>
+      </>
+    
+    )
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return (<p>Error: {error.message}</p>);
   }
 
-  return (
+  return (  
+    <>
+
     <Container>
-      <div>
+      
+      <div className='py-4'>
         Watch our latest sermon here, if you missed a different one or want to watch one again have a look here on this <Link href='/youtube' className="font-semibold hover:underline">page</Link>.
       </div>
+     
     <div id="video">
       {videoId && (
-        <VideoComponent vidSrc={'https://www.youtube.com/watch?v='+videoId} />
+        <VideoComponent vidSrc={'https://www.youtube.com/watch?v='+videoId} controls={true}/>
       )}
     </div>
     </Container>
+    </>
   );
 }
 
