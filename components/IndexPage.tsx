@@ -31,17 +31,16 @@ export default function IndexPage(props: IndexPageProps) {
         <IndexPageHead settings={settings} />
       </Head>
       <Layout preview={preview} loading={loading}>
-        <div className=''>
-        </div>
+        <div className=""></div>
         <Container>
-          <Hero /> 
+          <Hero />
           <SectionHeader>Watch the latest sermon in our series</SectionHeader>
-          <LatestSermon /> 
+          <LatestSermon />
           <SectionHeader>Find out more about us</SectionHeader>
           <About />
           <SectionHeader>Keep in contact with us</SectionHeader>
           <Contact />
-          <SectionHeader>Check out our blog</SectionHeader>
+          {/* <SectionHeader>Check out our blog</SectionHeader>
  
           {heroPost && (
             <HeroPost
@@ -53,10 +52,9 @@ export default function IndexPage(props: IndexPageProps) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />} 
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}  */}
           <Footer />
         </Container>
-
       </Layout>
     </>
   )

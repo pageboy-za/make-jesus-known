@@ -13,13 +13,13 @@ import Head from 'next/head'
 import { notFound } from 'next/navigation'
 
 import Footer from './global/footer'
-import Menu from './homepage/menu'
+import Menu from './homepage/Menu'
 
 const menuArr = [
-  {name: 'Home', href: '/'},
+  { name: 'Home', href: '/' },
   { name: 'About', href: '/#about' },
   { name: 'Contact', href: '/contact' },
-  {name:'Video Sermons', href:'/youtube'},
+  { name: 'Video Sermons', href: '/youtube' },
 ]
 export interface PostPageProps {
   preview?: boolean
@@ -50,7 +50,7 @@ export default function PostPage(props: PostPageProps) {
 
       <Layout preview={preview} loading={loading}>
         <Container>
-        <Menu nav={menuArr} />
+          <Menu nav={menuArr} />
           <BlogHeader title={title} level={2} href={'/blog'} />
           {preview && !post ? (
             <PostTitle>Loading…</PostTitle>
@@ -65,7 +65,6 @@ export default function PostPage(props: PostPageProps) {
                 />
 
                 <PostBody content={post.content} />
-
               </article>
               <SectionSeparator />
               {morePosts?.length > 0 && <MoreStories posts={morePosts} />}

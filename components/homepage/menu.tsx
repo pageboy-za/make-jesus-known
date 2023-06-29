@@ -1,4 +1,4 @@
-
+"use client"
 import { Dialog, Transition } from '@headlessui/react'
 import { Bars3Icon,XMarkIcon} from '@heroicons/react/24/outline'
 import Link from 'next/link'
@@ -13,7 +13,8 @@ export default function Menu({nav}) {
   const navigation = nav
 
   return (
-<div className="bg-gray-900 px-6 lg:px-8 pb-4">
+<div className="px-6 pb-4 bg-gray-900 lg:px-8">
+  
         <nav className="flex items-center justify-between pt-6" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
@@ -27,7 +28,7 @@ export default function Menu({nav}) {
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="w-6 h-6" aria-hidden="true" />
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
@@ -40,7 +41,7 @@ export default function Menu({nav}) {
         </nav>
         <div>
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-gray-900/75 opacity-90 px-6 py-6 lg:hidden">
+          <Dialog.Panel focus="true" className="fixed inset-0 z-10 px-6 py-6 overflow-y-auto bg-gray-900/75 opacity-90 lg:hidden">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Make Jesus Known</span>
@@ -51,17 +52,17 @@ export default function Menu({nav}) {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                <XMarkIcon className="w-6 h-6" aria-hidden="true" />
               </button>
             </div>
-            <div className="mt-6 flow-root">
+            <div className="flow-root mt-6">
               <div className="-my-6 divide-y divide-gray-500/25">
-                <div className="space-y-2 py-6">
+                <div className="py-6 space-y-2">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-400/10"
+                      className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-white rounded-lg hover:bg-gray-400/10"
                     >
                       {item.name}
                     </Link>

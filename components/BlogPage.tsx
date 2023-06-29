@@ -9,13 +9,13 @@ import type { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 
 import Footer from './global/footer'
-import Menu from './homepage/menu'
+import Menu from './homepage/Menu'
 
 const menuArr = [
-  {name: 'Home', href: '/'},
-  { name: 'About', href: '/#about' }, 
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/#about' },
   { name: 'Contact', href: '/contact' },
-  {name:'Video Sermons', href:'/youtube'},
+  { name: 'Video Sermons', href: '/youtube' },
 ]
 
 export interface IndexPageProps {
@@ -37,13 +37,16 @@ export default function IndexPage(props: IndexPageProps) {
         <IndexPageHead settings={settings} />
       </Head>
       <Layout preview={preview} loading={loading}>
-        <div className=''>
-        
-        </div>
+        <div className=""></div>
 
         <Container>
           <Menu nav={menuArr} />
-          <BlogHeader title={title} description={description} level={1} href={'/'} />
+          <BlogHeader
+            title={title}
+            description={description}
+            level={1}
+            href={'/'}
+          />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -57,7 +60,6 @@ export default function IndexPage(props: IndexPageProps) {
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           <Footer />
         </Container>
-
       </Layout>
     </>
   )
