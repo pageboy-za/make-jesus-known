@@ -1,5 +1,3 @@
-import Container from 'components/BlogContainer'
-import Layout from 'components/BlogLayout'
 import Footer from 'components/global/footer'
 import SectionHeader from 'components/global/sectionHeader'
 import About from 'components/homepage/about'
@@ -7,18 +5,22 @@ import Contact from 'components/homepage/ContactComponent'
 import Hero from 'components/homepage/Hero'
 import LatestSermon from 'components/homepage/latestSermon'
 import IndexPageHead from 'components/IndexPageHead'
+import { Metadata } from 'next'
 import Head from 'next/head'
+
+export const metadata: Metadata = {
+  title: 'Make Jesus Known ',
+}
 
 export default function IndexPage() {
   return (
     <>
       <Head>
         <title>Make Jesus Known</title>
-        <IndexPageHead />
       </Head>
       <div>
         <div className="container"></div>
-        <Container>
+        <div>
           <Hero />
           <SectionHeader>Watch the latest sermon in our series</SectionHeader>
           <LatestSermon />
@@ -27,7 +29,7 @@ export default function IndexPage() {
           <SectionHeader>Keep in contact with us</SectionHeader>
           <Contact />
           <Footer />
-        </Container>
+        </div>
       </div>
     </>
   )
