@@ -1,14 +1,14 @@
-import Footer from 'components/global/footer'
-import Menu from 'components/homepage/Menu'
-import PostTitle from 'components/PostTitle'
-import Container from 'components/structural/container'
-import VideoComponent from 'components/videoComponent'
+import Footer from 'app/components/global/footer'
+import Menu from 'app/components/homepage/Menu'
+import PostTitle from 'app/components/PostTitle'
+import Container from 'app/components/structural/container'
+import VideoComponent from 'app/components/videoComponent'
 import { Metadata } from 'next'
 
 const menuArr = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/#about' },
-  { name: 'Blog', href: '/blog' },
+  // { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ]
 

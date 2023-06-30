@@ -1,11 +1,11 @@
-import Footer from 'components/global/footer'
-import Menu from 'components/homepage/Menu'
+import Footer from 'app/components/global/footer'
+import Menu from 'app/components/homepage/Menu'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Contact from '../../components/homepage/ContactComponent'
-import Map from '../../components/MapComponent'
+import Contact from '../components/homepage/ContactComponent'
+import Map from '../components/MapComponent'
 
 const location = {
   name: 'Calvary Chapel Cambridge',

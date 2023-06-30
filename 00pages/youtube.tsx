@@ -1,8 +1,8 @@
-import Footer from 'components/global/footer'
-import Menu from 'components/homepage/Menu'
-import PostTitle from 'components/PostTitle'
-import Container from 'components/structural/container'
-import VideoComponent from 'components/videoComponent'
+import Footer from 'app/components/global/footer'
+import Menu from 'app/components/homepage/Menu'
+import PostTitle from 'app/components/PostTitle'
+import Container from 'app/components/structural/container'
+import VideoComponent from 'app/components/videoComponent'
 import Head from 'next/head'
 
 const menuArr = [
@@ -55,7 +55,7 @@ export default function YouTubeList({ data, vids }) {
           <div id="SermonVideos">
             <div className="grid grid-cols-1 md:grid-cols-2">
               {vids.map((item) => (
-                <div className="md:basis-1/2 px-6 pb-6 pt-2" key={item.etag}>
+                <div className="px-6 pb-6 pt-2 md:basis-1/2" key={item.etag}>
                   <VideoComponent
                     vidSrc={
                       'https://www.youtube.com/watch?v=' +

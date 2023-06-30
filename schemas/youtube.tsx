@@ -1,6 +1,6 @@
 import { DocumentVideoIcon } from '@sanity/icons'
-import Container from 'components/structural/container'
-import VideoComponent from 'components/videoComponent'
+import Container from 'app/components/structural/container'
+import VideoComponent from 'app/components/videoComponent'
 import { title } from 'lib/demo.data'
 import { defineField, defineType } from 'sanity'
 
@@ -16,44 +16,44 @@ import { defineField, defineType } from 'sanity'
 
  */
 
-  const Preview = (props) => {
-    const {url, renderDefault} = props
-    if (!url) {
-      return <div>Add the YouTube URL</div>
-    }
-    return (
-      <Container>
-        {renderDefault({...props, title: 'YouTube Embed'})}
-        <VideoComponent vidSrc={url.toString()}  title={title} controls={true} />
-      </Container>
-    )
+const Preview = (props) => {
+  const { url, renderDefault } = props
+  if (!url) {
+    return <div>Add the YouTube URL</div>
   }
+  return (
+    <Container>
+      {renderDefault({ ...props, title: 'YouTube Embed' })}
+      <VideoComponent vidSrc={url.toString()} title={title} controls={true} />
+    </Container>
+  )
+}
 
 export default defineType({
-    name: 'youtube',
-    title: 'YouTube Embed',
-    icon: DocumentVideoIcon,
-    type: 'object',
-    fields: [
-      defineField({
-        name: 'title',
-        title: 'Title',
-        type: 'string', 
-      }),
-      defineField({
-        name: 'url',
-        title: 'YouTube URL',
-        type: 'url',
-        validation: (rule) => rule.required(),
-          }),
-    ],
-    preview: {
-      select: {
-        url: 'url',
-        title: 'title'
-      },
+  name: 'youtube',
+  title: 'YouTube Embed',
+  icon: DocumentVideoIcon,
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'url',
+      title: 'YouTube URL',
+      type: 'url',
+      validation: (rule) => rule.required(),
+    }),
+  ],
+  preview: {
+    select: {
+      url: 'url',
+      title: 'title',
     },
-    components: {
-      preview: Preview,
-    },
-  })
+  },
+  components: {
+    preview: Preview,
+  },
+})

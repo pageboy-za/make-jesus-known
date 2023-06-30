@@ -1,4 +1,4 @@
-import VideoComponent from 'components/videoComponent'
+import VideoComponent from 'app/components/videoComponent'
 import React from 'react'
 
 import Menu from './Menu'

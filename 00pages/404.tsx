@@ -1,4 +1,4 @@
-import Menu from 'components/homepage/Menu'
+import Menu from 'app/components/homepage/Menu'
 import Link from 'next/link'
 
 const menuArr = [

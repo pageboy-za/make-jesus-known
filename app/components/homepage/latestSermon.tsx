@@ -1,7 +1,8 @@
 'use client'
-import SpinLoading from 'components/global/SpinLoading'
-import Container from 'components/structural/container'
-import VideoComponent from 'components/videoComponent'
+
+import SpinLoading from 'app/components/global/SpinLoading'
+import Container from 'app/components/structural/container'
+import VideoComponent from 'app/components/videoComponent'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 

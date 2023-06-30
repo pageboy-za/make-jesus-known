@@ -1,6 +1,6 @@
-import Avatar from 'components/AuthorAvatar'
-import CoverImage from 'components/CoverImage'
-import Date from 'components/PostDate'
+import Avatar from 'app/components/AuthorAvatar'
+import CoverImage from 'app/components/CoverImage'
+import Date from 'app/components/PostDate'
 import type { Post } from 'lib/sanity.queries'
 import Link from 'next/link'
 
@@ -30,7 +30,7 @@ export default function PostPreview({
       <div className="mb-4 text-lg">
         <Date dateString={date} />
       </div>
-      {excerpt && <p className="mb-4 prose leading-relaxed">{excerpt}</p>}
+      {excerpt && <p className="prose mb-4 leading-relaxed">{excerpt}</p>}
       {author && <Avatar name={author.name} picture={author.picture} />}
     </div>
   )

@@ -7,20 +7,17 @@
  * https://portabletext.org/
  *
  */
-import {PortableText} from '@portabletext/react';
-import {getImageDimensions} from '@sanity/asset-utils';
-import Image from 'next/image';
+import { PortableText } from '@portabletext/react'
+import { getImageDimensions } from '@sanity/asset-utils'
+import Image from 'next/image'
 
-import { urlFor } from "../lib/sanity.client"
+import { urlFor } from '../../lib/sanity.client'
 // import styles from './PostBody.module.css';
-import VideoComponent from './videoComponent';
-
-
-
+import VideoComponent from './videoComponent'
 
 // Barebones lazy-loaded image component
-const ImageComponent = ({value}) => {
-  const {width, height} = getImageDimensions(value)
+const ImageComponent = ({ value }) => {
+  const { width, height } = getImageDimensions(value)
   const src = urlFor(value.asset).url()
   return (
     <Image
@@ -34,32 +31,32 @@ const ImageComponent = ({value}) => {
         aspectRatio: width / height,
       }}
     />
-
   )
-} 
+}
 
-
-
-const PTVideo =({value}) => { 
-      return(
-      <VideoComponent vidSrc={value.url} title={value.title} />)
-    }
+const PTVideo = ({ value }) => {
+  return <VideoComponent vidSrc={value.url} title={value.title} />
+}
 
 export default function PostBody({ content }) {
   return (
-    <div className='mx-auto max-w-2xl prose md:prose-lg lg:prose-xl'>
-      <PortableText value={content} 
-      components={{
-        types: {
-          image: ImageComponent,
-          youtube: PTVideo,
-        },
-      }}
+    <div className="prose mx-auto max-w-2xl md:prose-lg lg:prose-xl">
+      <PortableText
+        value={content}
+        components={{
+          types: {
+            image: ImageComponent,
+            youtube: PTVideo,
+          },
+        }}
       />
     </div>
   )
 }
-function sanityClient(arg0: { projectId: string; dataset: string; useCdn: boolean }) {
+function sanityClient(arg0: {
+  projectId: string
+  dataset: string
+  useCdn: boolean
+}) {
   throw new Error('Function not implemented.')
 }
-
